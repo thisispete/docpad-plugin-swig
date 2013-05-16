@@ -19,8 +19,13 @@
         inExtension = opts.inExtension, templateData = opts.templateData;
         if (inExtension === 'swig') {
           swig = require('swig');
-          swig.init({autoescape:false, root: opts.file.attributes.fullDirPath})
-          tpl = swig.compile(opts.content)
+
+          var root = this.docpad.config.layoutsPaths;
+          // Add the current file's path as well for locally relative swig file references
+          root.push(opts.file.attributes.fullDirPath);
+
+          swig.init({autoescape:false, root: root});
+          tpl = swig.compile(opts.content);
           return opts.content = tpl(templateData);
         }
       };
