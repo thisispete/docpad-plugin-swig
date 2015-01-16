@@ -1,6 +1,6 @@
 {
 	"name": "docpad-plugin-swig",
-	"version": "0.0.3",
+	"version": "2.0.3",
 	"description": "Adds support for the swig templating engine to DocPad.",
 	"homepage": "http://github.com/thisispete/docpad-plugin-swig",
 	"keywords": [
